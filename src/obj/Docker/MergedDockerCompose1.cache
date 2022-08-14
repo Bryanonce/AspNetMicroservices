@@ -7,12 +7,16 @@ services:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: Catalog.API
       target: base
-    container_name: Catalog.API
+    container_name: catalog.api
+    depends_on:
+      catalogDb:
+        condition: service_started
     entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      DatabaseSettings:ConnectionString: mongodb://catalogDb:27017
       NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
     image: catalogapi:dev
     labels:
@@ -23,7 +27,8 @@ services:
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
     ports:
-    - target: 80
+    - published: 8000
+      target: 80
     tty: true
     volumes:
     - C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Catalog.API:/app:rw
@@ -33,4 +38,15 @@ services:
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Users\User\.nuget\packages:/root/.nuget/packages:ro
     - C:\Users\User\Documents\contenedores\AspNetMicroservices\src:/src:rw
+  catalogDb:
+    container_name: catalogDb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - mongo_data:/data/db:rw
 version: '3.4'
+volumes:
+  mongo_data: {}

@@ -10,7 +10,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "45579da7-ce27-4e97-9c4c-d72ddb0f8d6c": {
+      "ProjectGuid": "45579da7-ce27-4e97-9c4c-d72ddb0f8d6c",
+      "DisplayName": "docker-compose",
+      "ColorIndex": 1
+    },
+    "fe845eb9-a0ec-4a1a-8df1-f45d296e2796": {
+      "ProjectGuid": "fe845eb9-a0ec-4a1a-8df1-f45d296e2796",
+      "DisplayName": "Basket",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

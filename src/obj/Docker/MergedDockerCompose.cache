@@ -3,9 +3,26 @@ services:
     build:
       context: C:\Users\User\Documents\contenedores\AspNetMicroservices\src
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
+    container_name: catalog.api
+    depends_on:
+      catalogDb:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      DatabaseSettings:ConnectionString: mongodb://catalogDb:27017
     image: catalogapi
     ports:
-    - target: 80
+    - published: 8000
+      target: 80
+  catalogDb:
+    container_name: catalogDb
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+    volumes:
+    - mongo_data:/data/db:rw
 version: '3.4'
+volumes:
+  mongo_data: {}
