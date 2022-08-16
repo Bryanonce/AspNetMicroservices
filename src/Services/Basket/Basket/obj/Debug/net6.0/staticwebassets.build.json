@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "9vuGrBt9/c8n6OVTaLy6OWWk7YmEscJgVTqaOKbMG6M=",
-  "Source": "Basket",
-  "BasePath": "_content/Basket",
+  "Hash": "Dq05Wuau+KWr4ZiWDBEYHoFeOLfZvN0PDgbMq+PaKiE=",
+  "Source": "Basket.API",
+  "BasePath": "_content/Basket.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
