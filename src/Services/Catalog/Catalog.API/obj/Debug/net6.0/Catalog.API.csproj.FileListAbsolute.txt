@@ -42,3 +42,4 @@ C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Ca
 C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Catalog.API\obj\Debug\net6.0\ref\Catalog.API.dll
 C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Catalog.API\obj\Debug\net6.0\Catalog.API.pdb
 C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Catalog.API\obj\Debug\net6.0\Catalog.API.genruntimeconfig.cache
+C:\Users\User\Documents\contenedores\AspNetMicroservices\src\Services\Catalog\Catalog.API\obj\Debug\net6.0\Catalog.API.csproj.AssemblyReference.cache

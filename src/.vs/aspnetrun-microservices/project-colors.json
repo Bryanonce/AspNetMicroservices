@@ -18,9 +18,14 @@
     },
     "fe845eb9-a0ec-4a1a-8df1-f45d296e2796": {
       "ProjectGuid": "fe845eb9-a0ec-4a1a-8df1-f45d296e2796",
-      "DisplayName": "Basket",
+      "DisplayName": "Basket.API",
       "ColorIndex": 2
+    },
+    "d0ec7a33-ca15-44b4-8f5b-dc869279e18e": {
+      "ProjectGuid": "d0ec7a33-ca15-44b4-8f5b-dc869279e18e",
+      "DisplayName": "Discount.API",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
