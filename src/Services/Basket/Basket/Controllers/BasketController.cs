@@ -1,4 +1,5 @@
-﻿using Basket.Entities;
+﻿using Basket.API.Services;
+using Basket.Entities;
 using Basket.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -11,9 +12,14 @@ namespace Basket.Controllers
     {
         private readonly IBasketRepository basketRepository;
 
-        public BasketController(IBasketRepository basketRepository)
+        public ClientDiscountGrpc ClientDiscountGrpc { get; }
+        public ILogger<BasketController> _Logger { get; }
+
+        public BasketController(IBasketRepository basketRepository, ClientDiscountGrpc clientDiscountGrpc,  ILogger<BasketController> logger)
         {
             this.basketRepository = basketRepository;
+            ClientDiscountGrpc = clientDiscountGrpc;
+            _Logger = logger;
         }
 
         [HttpGet("{userName}", Name ="GetBasket")]
@@ -25,6 +31,18 @@ namespace Basket.Controllers
             {
                 return NotFound();  
             }
+            foreach(var item in shoppingCart.Items)
+            {
+                var discount = 0;
+                try
+                {
+                    discount = await ClientDiscountGrpc.GetDiscount(item.ProductName);
+                } catch (Exception ex) {
+                    _Logger.LogError(ex.Message);
+                }
+                item.Price -= discount;
+            }
+
             return shoppingCart;
         }
 

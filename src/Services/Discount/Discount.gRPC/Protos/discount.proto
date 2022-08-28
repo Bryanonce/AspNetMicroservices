@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Discount.gRPC";
+
+package discount;
+
+service Discounter {
+  rpc GetDiscount(DiscountRequest) returns (DiscountReply);
+}
+
+message DiscountRequest {
+	string ProductName = 1;
+}
+
+message DiscountReply {
+	int32 discount = 1;
+}

@@ -20,11 +20,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 var app = builder.Build();
 
 //Migration
-using (var scope = app.Services.CreateScope())
-{
-    var applicationDbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    applicationDbContext.Database.Migrate();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var applicationDbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+//    applicationDbContext.Database.Migrate();
+//}
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())

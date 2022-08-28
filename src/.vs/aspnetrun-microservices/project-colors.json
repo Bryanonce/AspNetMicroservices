@@ -25,7 +25,17 @@
       "ProjectGuid": "d0ec7a33-ca15-44b4-8f5b-dc869279e18e",
       "DisplayName": "Discount.API",
       "ColorIndex": 3
+    },
+    "f594cc56-82c4-46c9-bacc-c39b16653bcb": {
+      "ProjectGuid": "f594cc56-82c4-46c9-bacc-c39b16653bcb",
+      "DisplayName": "Discount.gRPC",
+      "ColorIndex": 4
+    },
+    "4b846729-a257-4df8-992e-b7e518a22d3c": {
+      "ProjectGuid": "4b846729-a257-4df8-992e-b7e518a22d3c",
+      "DisplayName": "Discount.gRPC",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }
